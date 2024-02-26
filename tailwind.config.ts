@@ -1,20 +1,14 @@
-import type { Config } from "tailwindcss";
+import { Config } from 'tailwindcss';
+import twedge from '@edge-ui/react/tailwind-plugin';
 
 const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-    },
-  },
-  plugins: [],
+    content: [
+        './src/**/*.{js,jsx,ts,tsx}',
+        // include edge-ui components in the content path
+        twedge.getContentPath()
+    ],
+    // register the plugin
+    plugins: [twedge()]
 };
+
 export default config;
