@@ -355,3 +355,4 @@ const items : Product[] = [
         quantity : 1,
     }
 ]
+export default items; 
