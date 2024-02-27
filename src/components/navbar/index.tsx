@@ -19,7 +19,7 @@ export default function Navbar() {
 
         <div className="space-x-5" >
           <NavLink href="/">Menu</NavLink>
-          <NavLink href="/">Cart</NavLink>
+          <NavLink href="/cart">Cart</NavLink>
         </div>
       </nav>
     </header>

@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Navbar from "@/components/navbar";
+import { PageLayout, ThemeProvider } from "@edge-ui/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,10 +20,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        <Navbar />
-        {children}
-        </body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          <PageLayout>
+            <Header />
+            <Navbar />
+            {children}
+          </PageLayout>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
