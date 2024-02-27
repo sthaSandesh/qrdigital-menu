@@ -1,8 +1,14 @@
+"use client";
+import { Button, useTheme } from "@edge-ui/react";
 import Link from "next/link";
 import React from "react";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaMoon, FaSun } from "react-icons/fa";
 
 export default function Header() {
+  const { setTheme, theme } = useTheme();
+  const handleThemeChange = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
   return (
     <div className="padx bg-gray-200 py-2 flex justify-between items-center font-bold">
       <h1>
@@ -10,9 +16,14 @@ export default function Header() {
         <span className="text-blue-800">Menu</span>
       </h1>
 
-      <Link href="https://github.com/sthaSandesh/qrdigital-menu" target="_">
-        <FaGithub />
-      </Link>
+      <div className="flex items-center gap-2">
+        <Button variant="ghost" onClick={handleThemeChange}>
+          {theme === "dark" ? <FaMoon /> : <FaSun />}
+        </Button>
+        <Link href="https://github.com/sthaSandesh/qrdigital-menu" target="_">
+          <FaGithub />
+        </Link>
+      </div>
     </div>
   );
 }
