@@ -6,6 +6,7 @@ export interface Product{
     img : string;
     price : number;
     quantity : number;
+    link : string ;
 }
 
 
@@ -18,6 +19,7 @@ const items : Product[] = [
         img : '/momo.jpg',
         price : 100,
         quantity : 1,
+        link : '/product/momo',
     },
     {
         id : 2,
@@ -27,6 +29,7 @@ const items : Product[] = [
         img : '/momo.jpg',
         price : 150,
         quantity : 1,
+        link : '/product/momo',
     },
     {
         id : 3,
@@ -36,6 +39,7 @@ const items : Product[] = [
         img : '/momo.jpg',
         price : 200,
         quantity : 1,
+        link : '/product/momo',
     },
     {
         id : 4,
@@ -45,6 +49,7 @@ const items : Product[] = [
         img : '/momo.jpg',
         price : 250,
         quantity : 1,
+        link : '/product/momo',
     },
     {
         id : 5,
@@ -54,6 +59,7 @@ const items : Product[] = [
         img : '/chowmein.jpg',
         price : 100,
         quantity : 1,
+        link : '/product/chowmein',
     },
     {
         id : 6,
@@ -63,6 +69,7 @@ const items : Product[] = [
         img : '/chowmein.jpg',
         price : 90,
         quantity : 1,
+        link : '/product/chowmein',
     },
     {
         id : 7,
@@ -72,6 +79,7 @@ const items : Product[] = [
         img : '/chowmein.jpg',
         price : 80,
         quantity : 1,
+        link : '/product/chowmein',
     },
     {
         id : 8,
@@ -81,6 +89,7 @@ const items : Product[] = [
         img : '/chowmein.jpg',
         price : 85,
         quantity : 1,
+        link : '/product/chowmein',
     },
     {
         id : 9,
@@ -90,15 +99,17 @@ const items : Product[] = [
         img : '/choupsey.jpg',
         price : 360,
         quantity : 1,
+        link : '/product/choupsey',
     },
     {
         id : 10,
         tittle : "Chinese Chopsuey",
         category : "FOOD",
         SubCategory : "Choupsey",
-        img : '/choopsey.jpg',
+        img : '/choupsey.jpg',
         price : 300,
         quantity : 1,
+        link : '/product/choupsey',
     },
     {
         id : 11,
@@ -108,6 +119,7 @@ const items : Product[] = [
         img : '/breakfast.jpg',
         price : 110,
         quantity : 1,
+        link : '/product/breakfast',
     },
     {
         id : 12,
@@ -117,6 +129,7 @@ const items : Product[] = [
         img : '/breakfast.jpg',
         price : 250,
         quantity : 1,
+        link : '/product/breakfast',
     },
     {
         id : 13,
@@ -126,6 +139,7 @@ const items : Product[] = [
         img : '/breakfast.jpg',
         price : 300,
         quantity : 1,
+        link : '/product/breakfast',
     },
     {
         id : 14,
@@ -135,6 +149,7 @@ const items : Product[] = [
         img : '/vegSnacks.jpg',
         price : 120,
         quantity : 1,
+        link : '/product/vegsnacks',
     },
     {
         id : 15,
@@ -144,6 +159,7 @@ const items : Product[] = [
         img : '/vegSnacks.jpg',
         price : 150,
         quantity : 1,
+        link : '/product/vegsnacks',
     },
     {
         id : 16,
@@ -153,6 +169,7 @@ const items : Product[] = [
         img : '/vegSnacks.jpg',
         price : 250,
         quantity : 1,
+        link : '/product/vegsnacks',
     },
     {
         id : 17,
@@ -162,6 +179,7 @@ const items : Product[] = [
         img : '/vegSnacks.jpg',
         price : 100,
         quantity : 1,
+        link : '/product/vegsnacks',
     },
     {
         id : 18,
@@ -171,6 +189,7 @@ const items : Product[] = [
         img : '/vegSnacks.jpg',
         price : 150,
         quantity : 1,
+        link : '/product/vegsnacks',
     },
     {
         id : 19,
@@ -180,6 +199,7 @@ const items : Product[] = [
         img : '/vegSnacks.jpg',
         price : 200,
         quantity : 1,
+        link : '/product/vegsnacks',
     },
     {
         id : 20,
@@ -189,6 +209,7 @@ const items : Product[] = [
         img : '/nonVegSnacks.jpg',
         price : 250,
         quantity : 1,
+        link : '/product/nonvegsnacks',
     },
     {
         id : 21,
@@ -198,6 +219,7 @@ const items : Product[] = [
         img : '/nonVegSnacks.jpg',
         price : 300,
         quantity : 1,
+        link : '/product/nonvegsnacks',
     },
     {
         id : 22,
@@ -207,6 +229,7 @@ const items : Product[] = [
         img : '/nonVegSnacks.jpg',
         price : 350,
         quantity : 1,
+        link : '/product/nonvegsnacks',
     },
     {
         id : 23,
@@ -216,6 +239,7 @@ const items : Product[] = [
         img : '/nonVegSnacks.jpg',
         price : 400,
         quantity : 1,
+        link : '/product/nonvegsnacks',
     },
     {
         id : 24,
@@ -225,6 +249,7 @@ const items : Product[] = [
         img : '/nonVegSnacks.jpg',
         price : 450,
         quantity : 1,
+        link : '/product/nonvegsnacks',
     },
     //food sakyo
 
@@ -236,6 +261,7 @@ const items : Product[] = [
         img : '/coldDrinks.jpg',
         price : 100,
         quantity : 1,
+        link : '/product/colddrinks',
     },
     {
         id : 26,
@@ -245,6 +271,7 @@ const items : Product[] = [
         img : '/coldDrinks.jpg',
         price : 150,
         quantity : 1,
+        link : '/product/colddrinks',
     },
     {
         id : 27,
@@ -254,6 +281,7 @@ const items : Product[] = [
         img : '/coldDrinks.jpg',
         price : 250,
         quantity : 1,
+        link : '/product/colddrinks',
     },
     {
         id : 28,
@@ -263,6 +291,7 @@ const items : Product[] = [
         img : '/coldDrinks.jpg',
         price : 100,
         quantity : 1,
+        link : '/product/colddrinks',
     },
     {
         id : 29,
@@ -272,6 +301,7 @@ const items : Product[] = [
         img : '/beer.jpg',
         price : 200,
         quantity : 1,
+        link : '/product/beer',
     },
     {
         id : 30,
@@ -281,6 +311,7 @@ const items : Product[] = [
         img : '/beer.jpg',
         price : 300,
         quantity : 1,
+        link : '/product/beer',
     },
     {
         id : 31,
@@ -290,6 +321,7 @@ const items : Product[] = [
         img : '/beer.jpg',
         price : 400,
         quantity : 1,
+        link : '/product/beer',
     },
     {
         id : 32,
@@ -299,6 +331,7 @@ const items : Product[] = [
         img : '/beer.jpg',
         price : 500,
         quantity : 1,
+        link : '/product/beer',
     },
     {
         id : 33,
@@ -308,6 +341,7 @@ const items : Product[] = [
         img : '/coffee.jpg',
         price : 100,
         quantity : 1,
+        link : '/product/coffee',
     },
     {
         id : 34,
@@ -317,6 +351,7 @@ const items : Product[] = [
         img : '/coffee.jpg',
         price : 150,
         quantity : 1,
+        link : '/product/coffee',
     },
     {
         id : 35,
@@ -326,6 +361,7 @@ const items : Product[] = [
         img : '/coffee.jpg',
         price : 200,
         quantity : 1,
+        link : '/product/coffee',
     },
     {
         id: 36,
@@ -335,6 +371,7 @@ const items : Product[] = [
         img : '/coffee.jpg',
         price : 250,
         quantity : 1,
+        link : '/product/coffee',
     },
     {
         id : 37,
@@ -344,6 +381,7 @@ const items : Product[] = [
         img : '/wine.jpg',
         price : 300,
         quantity : 1,
+        link : '/product/wine',
     },
     {
         id : 38,
@@ -353,6 +391,7 @@ const items : Product[] = [
         img : '/wine.jpg',
         price : 350,
         quantity : 1,
+        link : '/product/wine',
     }
 ]
 export default items; 
