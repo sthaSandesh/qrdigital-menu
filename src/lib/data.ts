@@ -5,7 +5,7 @@ export interface Product{
     SubCategory : string;
     img : string;
     price : number;
-    quantity : 1;
+    quantity : number;
 }
 
 
