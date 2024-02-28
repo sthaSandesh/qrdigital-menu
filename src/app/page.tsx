@@ -2,11 +2,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import items from "@/lib/data";
-import {
-  Button,
-  Card,
-  CardTitle,
-} from "@edge-ui/react";
+import { Button, Card, CardTitle } from "@edge-ui/react";
+import Link from "next/link";
 
 export default function Home() {
   const foodCategory = "FOOD";
@@ -14,21 +11,35 @@ export default function Home() {
 
   const filteredFood = items
     .filter((item) => item.category === foodCategory)
-    .reduce((acc: { subCategory: string; img: string }[], item) => {
-      if (!acc.find((i) => i.subCategory === item.SubCategory)) {
-        acc.push({ subCategory: item.SubCategory, img: item.img });
-      }
-      return acc;
-    }, []);
+    .reduce(
+      (acc: { subCategory: string; img: string; href: string }[], item) => {
+        if (!acc.find((i) => i.subCategory === item.SubCategory)) {
+          acc.push({
+            subCategory: item.SubCategory,
+            img: item.img,
+            href: item.link,
+          });
+        }
+        return acc;
+      },
+      []
+    );
 
   const filteredBeverage = items
     .filter((item) => item.category === beverageCategory)
-    .reduce((acc: { subCategory: string; img: string }[], item) => {
-      if (!acc.find((i) => i.subCategory === item.SubCategory)) {
-        acc.push({ subCategory: item.SubCategory, img: item.img });
-      }
-      return acc;
-    }, []);
+    .reduce(
+      (acc: { subCategory: string; img: string; href: string }[], item) => {
+        if (!acc.find((i) => i.subCategory === item.SubCategory)) {
+          acc.push({
+            subCategory: item.SubCategory,
+            img: item.img,
+            href: item.link,
+          });
+        }
+        return acc;
+      },
+      []
+    );
 
   const [currentCategory, setCurrentCategory] = useState(foodCategory);
 
@@ -60,10 +71,7 @@ export default function Home() {
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
         {filteredItems.map((item, index) => (
-          <div key={index}    
-          >
-
-            
+          <Link href={item.href} key={index}>
             <Card className="h-50 dark:bg-white dark:text-gray-500">
               <div className="relative overflow-hidden ">
                 <Image
@@ -78,7 +86,7 @@ export default function Home() {
               </div>
               <CardTitle className="py-2">{item.subCategory}</CardTitle>
             </Card>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
