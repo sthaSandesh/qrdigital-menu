@@ -69,9 +69,9 @@ export default function Home() {
         </Button>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-8 text-center">
         {filteredItems.map((item, index) => (
-          <Link href={item.href} key={index}>
+          <Link href={`product/${item.href}`} key={index}>
             <Card className="h-50 dark:bg-white dark:text-gray-500">
               <div className="relative overflow-hidden ">
                 <Image

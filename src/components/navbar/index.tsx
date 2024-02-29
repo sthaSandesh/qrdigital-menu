@@ -3,9 +3,12 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { NavLink } from "./nav-link";
+import { useStore } from "@/lib/store";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { cart } = useStore(); // access the cart from the store
+
   return (
     <header>
       <nav
@@ -17,9 +20,10 @@ export default function Navbar() {
           Our Menu
         </Link>
 
-        <div className="space-x-5" >
+        <div className="space-x-5">
           <NavLink href="/">Menu</NavLink>
-          <NavLink href="/cart">Cart</NavLink>
+          <NavLink href="/cart">Cart ({cart.length})</NavLink>{" "}
+          {/* display the number of items in the cart */}
         </div>
       </nav>
     </header>
