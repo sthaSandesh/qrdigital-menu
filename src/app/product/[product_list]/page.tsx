@@ -10,7 +10,7 @@ export default function ProductList() {
   //extract route
   const router = usePathname();
 
-  const {  addToCart } = useStore();
+  const { addToCart } = useStore();
 
 
 
