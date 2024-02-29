@@ -12,8 +12,6 @@ export default function ProductList() {
 
   const { addToCart } = useStore();
 
-
-
   //split route to get the last part
   const split_router = router.split("/");
   const extracted_route = split_router[split_router.length - 1];
@@ -36,8 +34,12 @@ export default function ProductList() {
             <div key={item.id}>
               <Card className="flex justify-between items-center px-2 my-2 ">
                 <div>
-                  <p>{item.tittle}</p>
-                  <p>{item.price}</p>
+                  <p className="font-semibold text-muted-foreground">
+                    {item.tittle}
+                  </p>
+                  <p className="font-semibold text-orange-500">
+                    Rs.{item.price}
+                  </p>
                 </div>
                 <Button size="sm" onClick={() => addToCart(item)}>
                   Add to Cart{" "}
