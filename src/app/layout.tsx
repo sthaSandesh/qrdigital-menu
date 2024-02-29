@@ -3,7 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Navbar from "@/components/navbar";
-import { PageLayout, ThemeProvider } from "@edge-ui/react";
+import { PageLayout, ThemeProvider, Toaster } from "@edge-ui/react";
+import { UserProvider } from "@/lib/context/UserContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,12 +26,15 @@ export default function RootLayout({
           defaultTheme="light"
           enableSystem={false}
           disableTransitionOnChange
+          
         >
-          <PageLayout>
+          <Toaster/>
+         <UserProvider> <PageLayout>
             <Header />
             <Navbar />
             {children}
           </PageLayout>
+         </UserProvider>
         </ThemeProvider>
       </body>
     </html>
