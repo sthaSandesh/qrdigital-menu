@@ -16,7 +16,7 @@ export default function Navbar() {
           open ? "bg-muted" : ""
         } lg:bg-white shadow-sm`}
       >
-        <Link href="/" className="font-bold">
+        <Link href="/" className="font-bold text-orange-500">
           Our Menu
         </Link>
 

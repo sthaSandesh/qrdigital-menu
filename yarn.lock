@@ -2702,6 +2702,7 @@ __metadata:
     eslint: "npm:^8"
     eslint-config-next: "npm:14.1.0"
     next: "npm:14.1.0"
+    pocketbase: "npm:^0.21.1"
     postcss: "npm:^8"
     react: "npm:^18"
     react-dom: "npm:^18"
@@ -4744,6 +4745,13 @@ __metadata:
   version: 4.0.6
   resolution: "pirates@npm:4.0.6"
   checksum: 10c0/00d5fa51f8dded94d7429700fb91a0c1ead00ae2c7fd27089f0c5b63e6eca36197fe46384631872690a66f390c5e27198e99006ab77ae472692ab9c2ca903f36
+  languageName: node
+  linkType: hard
+
+"pocketbase@npm:^0.21.1":
+  version: 0.21.1
+  resolution: "pocketbase@npm:0.21.1"
+  checksum: 10c0/eb38b49b2df16da244795d0360813287992a24e0a020b98fe157be2f1a96913196998313e5a9bab133c655d702c96729158c7467f67bb24f0ff89b32fb826080
   languageName: node
   linkType: hard
 

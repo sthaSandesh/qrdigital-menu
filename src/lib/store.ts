@@ -1,4 +1,4 @@
-import create, { SetState } from 'zustand';
+import  {create, SetState } from 'zustand';
 import { Product } from './data';
 type StoreState = {
     cart: Product[];

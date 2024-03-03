@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import Navbar from "@/components/navbar";
 import { PageLayout, ThemeProvider, Toaster } from "@edge-ui/react";
-import { UserProvider } from "@/lib/context/UserContext";
+// import { UserProvider } from "@/lib/context/UserContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,12 +29,13 @@ export default function RootLayout({
           
         >
           <Toaster/>
-         <UserProvider> <PageLayout>
+         {/* <UserProvider>  */}
+          <PageLayout>
             <Header />
             <Navbar />
             {children}
           </PageLayout>
-         </UserProvider>
+         {/* </UserProvider> */}
         </ThemeProvider>
       </body>
     </html>
