@@ -1,96 +1,53 @@
-import React from "react";
-import Image from "next/image";
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@edge-ui/react";
+'use client';
 
-const invoices = [
-  {
-    invoice: "INV001",
-    paymentStatus: "Paid",
-    totalAmount: "$250.00",
-    paymentMethod: "Credit Card",
-  },
-  {
-    invoice: "INV002",
-    paymentStatus: "Pending",
-    totalAmount: "$150.00",
-    paymentMethod: "PayPal",
-  },
-  {
-    invoice: "INV003",
-    paymentStatus: "Unpaid",
-    totalAmount: "$350.00",
-    paymentMethod: "Bank Transfer",
-  },
-  {
-    invoice: "INV004",
-    paymentStatus: "Paid",
-    totalAmount: "$450.00",
-    paymentMethod: "Credit Card",
-  },
-  {
-    invoice: "INV005",
-    paymentStatus: "Paid",
-    totalAmount: "$550.00",
-    paymentMethod: "PayPal",
-  },
-  {
-    invoice: "INV006",
-    paymentStatus: "Pending",
-    totalAmount: "$200.00",
-    paymentMethod: "Bank Transfer",
-  },
-  {
-    invoice: "INV007",
-    paymentStatus: "Unpaid",
-    totalAmount: "$300.00",
-    paymentMethod: "Credit Card",
-  },
-];
+import { pb } from "@/lib/pocketbase";
+import { Button, Input } from "@edge-ui/react";
+import { useEffect, useState } from "react";
+import { CgSpinner } from "react-icons/cg";
+import Admin from "./(comp)/admin";
 
-export default function Admin() {
-  return (
-    <section className="padx">
-      <div className="text-center font-bold py-4 text-2xl text-orange-500">
-        Admin
-      </div>
-      <div>
-        <Table>
-          <TableCaption>A list of your recent invoices.</TableCaption>
-          <TableHeader>
-            <TableRow>
-              <TableHead className="w-[100px]">Table</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead className="text-right">Amount</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {invoices.map((invoice) => (
-              <TableRow key={invoice.invoice}>
-                <TableCell className="font-medium">{invoice.invoice}</TableCell>
-                <TableCell>{invoice.paymentStatus}</TableCell>
-                <TableCell className="text-right">
-                  {invoice.totalAmount}
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-          <TableFooter>
-            <TableRow>
-              <TableCell colSpan={3}>Total</TableCell>
-              <TableCell className="text-right">$2,500.00</TableCell>
-            </TableRow>
-          </TableFooter>
-        </Table>
-      </div>
-    </section>
-  );
+export default function AdminPanel() {
+  const [loading, setLoading] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [loginPrompt, setLoginPrompt] = useState(true);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const login = async () => {
+    try {
+      setLoading(true);
+      const res = await pb.admins.authWithPassword(email, password);
+      if (!res.admin) throw 'Failed to login';
+      setLoggedIn(true);
+      setLoading(false);
+    } catch(e) {
+      setLoading(false);
+      alert(`${e}`);
+    }
+  };
+
+  useEffect(() => {
+    pb.admins.authRefresh()
+    .then(() => setLoggedIn(true))
+      .catch(() => {
+        setLoginPrompt(true);
+      })
+  }, []);
+
+
+  if (loggedIn) return <Admin/>;
+
+      if (loginPrompt) {
+        return <div className="grid place-items-center h-screen"><div className="flex items-center flex-col gap-4">
+        <Input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email} />
+        <Input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password} />
+        <Button onClick={login}>Login</Button>
+      </div></div>
+      }
+  if (loading) return <div className="h-screen grid place-items-center">
+      <CgSpinner className="h-8 w-8 text-primary animate-spin"/>
+    </div>
+
+    return <></>
+
 }

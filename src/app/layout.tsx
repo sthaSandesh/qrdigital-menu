@@ -30,11 +30,11 @@ export default function RootLayout({
         >
           <Toaster/>
          {/* <UserProvider>  */}
-          <PageLayout>
+          {/* <PageLayout> */}
             <Header />
             <Navbar />
             {children}
-          </PageLayout>
+          {/* </PageLayout> */}
          {/* </UserProvider> */}
         </ThemeProvider>
       </body>
