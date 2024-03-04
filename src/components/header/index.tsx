@@ -11,10 +11,12 @@ export default function Header() {
   };
   return (
     <div className="padx bg-gray-200 py-2 flex justify-between items-center font-bold">
-      <h1>
-        <span className="text-green-500">Digital-</span>
-        <span className="text-blue-800">Menu</span>
-      </h1>
+      <Link href="/">
+        <h1>
+          <span className="text-green-500">Digital-</span>
+          <span className="text-blue-800">Menu</span>
+        </h1>
+      </Link>
 
       <div className="flex items-center gap-2">
         <Button variant="ghost" onClick={handleThemeChange}>
