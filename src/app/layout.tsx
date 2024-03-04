@@ -26,16 +26,15 @@ export default function RootLayout({
           defaultTheme="light"
           enableSystem={false}
           disableTransitionOnChange
-          
         >
-          <Toaster/>
-         {/* <UserProvider>  */}
-          {/* <PageLayout> */}
+          <Toaster />
+          {/* <UserProvider>  */}
+          <PageLayout>
             <Header />
             <Navbar />
             {children}
-          {/* </PageLayout> */}
-         {/* </UserProvider> */}
+          </PageLayout>
+          {/* </UserProvider> */}
         </ThemeProvider>
       </body>
     </html>

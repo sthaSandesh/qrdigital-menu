@@ -40,7 +40,7 @@ export default function Cart() {
               <TableCell>{item.product.tittle}</TableCell>
               <TableCell>{item.quantity}</TableCell>
               <TableCell className="text-right">
-                ${item.product.price * item.quantity}
+                {item.product.price * item.quantity}.00
               </TableCell>
             </TableRow>
           ))}
@@ -48,7 +48,7 @@ export default function Cart() {
         <TableFooter>
           <TableRow>
             <TableCell colSpan={3}>Total</TableCell>
-            <TableCell className="text-right">${totalPrice}</TableCell>
+            <TableCell className="text-right">Rs.{totalPrice}.00</TableCell>
           </TableRow>
         </TableFooter>
       </Table>
