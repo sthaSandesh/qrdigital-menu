@@ -51,7 +51,7 @@ export default function Home() {
     currentCategory === foodCategory ? filteredFood : filteredBeverage;
 
   return (
-    <div className="padx">
+    <div className="padx h-screen">
       <div className="flex space-x-5 py-4 text-center">
         <Button
           size="sm"
